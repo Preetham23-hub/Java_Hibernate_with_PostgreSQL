@@ -1,0 +1,14 @@
+ Student to Subject ---> Many to Many  --> Have to create a middle table to map foreign key of Student and Subject
+
+
+For transcations
+
+We get the session from the session factory  --> Session session = HibernateUtil.getSessionFactory().openSession()
+
+we initiate the transaction --> transaction = session.beginTransaction();
+we perform the action with the opened session -->  session.saveOrUpdate(subject);
+we close the transaction -->   transaction.commit();
+
+
+@Transactional handles transaction management for Spring Data JPA, but in raw Hibernate, you still need to manage transactions explicitly.
+
